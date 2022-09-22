@@ -1,0 +1,62 @@
+<div class="container bootstrap snippets bootdey">
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="main-box no-header clearfix">
+              <div class="main-box-body clearfix">
+                  <h1    style="color:#005555">Dashboard</h1> <br>
+                  <div class="table-responsive">
+                      <table class="table user-list" *ngIf="!hide"  >
+              
+                          <thead>
+                              <tr>
+                               
+                              <th>idOffer </th>
+                              <th>ProductId</th>
+                              <th>startDate </th>
+                              <th>ExpireDate</th>
+                              <th>Price</th>
+                              <th>Status</th>
+                              <th></th>
+                              <th></th>
+                              <th>Delievred </th>
+                            
+
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr *ngFor="let c of listeoffers">
+                                  <td>
+                                     
+                                      <a type="button" (click)="show(c.id)">{{c.id}}</a>
+                                     
+                                  </td>
+                                  <td>{{c.product}}</td>
+                                  <td>{{c.startDate}}/td>
+                                  <td>{{c.endDate}}</td>
+                                  <td>{{c.price}}</td>
+                                  <td>{{c.etat}}</td>
+                                  <td> <button style="width: 20%;" type="button" class="btn btn-success"  (click)="activate(c)"  style="margin: right 1px;" > Activate<i class="fa fa-check" aria-hidden="true"></i></button></td>
+                                  <td><button style="width: 20%;" type="button" class="btn btn-danger"  (click)="disable(c)" style="margin: right 1px;"> Disactivate<i class="fa fa-times" aria-hidden="true"></i></button> </td>
+                                  <td> <span><input (change)="check(c)" [checked]="c.checked"  type="checkbox" [disabled]="c.checked" id="artisan" style="margin: auto;width: 50%;padding: 10px;"></span></td>
+                           
+                              </tr>
+                              
+                                
+                              
+                               
+                                  
+                                     
+                                  
+                              
+                          </tbody>
+                      </table>
+                      <p style="text-align:center" *ngIf="hide" >no item with  this state</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<app-detail-offers [id]="chosenoffer"  ></app-detail-offers> 
+

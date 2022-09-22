@@ -1,0 +1,8 @@
+
+  <app-navbar [token]="tokeno" (outi)="logout($event)" ></app-navbar>
+  
+
+   <router-outlet  (activate)="subscribe($event)" (deactivate)="unsubscribe()"   ></router-outlet>  
+     <div><br>
+       <app-footer [hide]="tokeno"></app-footer> 
+    </div> 

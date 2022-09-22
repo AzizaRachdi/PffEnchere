@@ -1,0 +1,6 @@
+ 
+  .bg-image {
+    background-image:url("/assets/images/categories-mi.jpg");
+    background-size: cover;
+    background-position: center;
+  }

@@ -1,0 +1,39 @@
+
+  <section *ngIf="offer"  class="border p-4 text-center mb-4 " > 
+
+ 
+
+    <div
+         class="modal"
+         tabindex="-1"
+         style="position: static; display: block; height: auto"
+         data-gtm-vis-first-on-screen-2340190_1302="6684"
+         data-gtm-vis-total-visible-time-2340190_1302="100"
+         data-gtm-vis-has-fired-2340190_1302="1"
+         >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+           
+           <h5 class="modal-title" >Make a Proposal </h5> 
+          </div>
+          <p style="font-size:30px;">Current Price : {{ offer.price }} <i class="fa fa-diamond" aria-hidden="true" style="--fa-beat-scale: 2.0;color:rgb(19, 19, 7)"> </i></p>
+          <div class="modal-body">
+     
+        <div>
+            <label class="form-label" for="form1Example2"></label>
+            <input #price type="number" id="form1Example2" class="form-control" style="border-color: #005555" />
+        
+        </div>
+
+          </div>
+          <div class="modal-footer">
+         <button (click)="close()"type="button"class="btn btn-danger ">Close</button> 
+         <button type="button" (click)="to_auction(offer.price,price.value)" class="btn btn-success " >Buy</button> 
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+

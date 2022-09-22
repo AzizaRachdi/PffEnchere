@@ -1,0 +1,25 @@
+<br>
+<div *ngIf="listefilter">
+    <app-proposal [hidden]=propose  (returnit)="backto($event)" [offer]="selectedoffer"  style="position:relative"></app-proposal>
+    <app-view-product [hidden]="detail" [product]="selectedproduct" [offer]="selectedoffer" (returnit)="backfrom($event)"></app-view-product>
+    <app-timer [hidden]="timer" [timeleft]="time" (returnit)="returnto($event)"></app-timer>
+   
+   <div  [ngStyle]="{'opacity':opacity}" class=" row gap-4">
+        <a *ngIf="text" type="button" style="color:blue" (click)=cancelsearch() >cancel your search</a>  
+      
+      
+        <div  class="card col-md-5 col-sm-9 col-lg-3 " *ngFor="let c of newliste" >
+          <img src={{c[1].image}} class="card-img-top" style="height: 200px;" alt={{c[1].image}} >
+         
+         <div class="card-body">
+           <h5 class="card-title">{{c[1].productName}}</h5>
+           <p class="card-text fs-6 lead">{{c[1].description|short:100}}</p>
+           <p class="card-text">Current price : {{c[0].price}}</p>
+           <a [hidden]="c[0].owner" class="btn "  (click)="to_auction(c[0])"   style="background-color:  #005555; color:white ;margin-right: 3px;"><i class="fa fa-gavel" aria-hidden="true"></i></a>
+           <a  (click)="showtime(c[0])" class="btn " style="background-color:  #005555;color:white ;margin-right: 3px;"><i class="fa fa-hourglass" aria-hidden="true"></i></a>
+           <a  class="btn " (click)="showdetail(c[0],c[1])" style="background-color:  #005555;color:white ;margin-right: 6px;"><i class="fa fa-eye" aria-hidden="true"></i></a>
+         </div>
+       </div>
+     <p *ngIf="!newliste.length" >Sorry nothing correspond to your search </p>
+     </div>
+   </div>

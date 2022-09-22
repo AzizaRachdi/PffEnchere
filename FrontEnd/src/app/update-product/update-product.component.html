@@ -1,0 +1,67 @@
+<div class="container-fluid ps-md-0">
+    <div class="row g-0">
+      <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <h3 class="login-heading mb-4">Update Product</h3>
+  
+                <!-- Sign In Form -->
+                <form [formGroup]="updateprod" (ngSubmit)="updateProduct()" >
+                  
+                   
+                        <div class="form-group">
+                          <label >Name Product</label>
+                          <input   type="text"  formControlName="productName"  class="form-control">
+                         </div>
+                
+                         <div class="form-group">
+                          <label >Label Product</label>
+                          <input  type="text" formControlName="description" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="col-sm-3 control-label" >Image(jpg/png):</label> <br>
+                          <label class="control-label Small" for="file_img"  > </label> 
+                         
+                          <input type="file" (change)="getFile($event)" formControlName="image" class="form-control">
+                      </div>
+                
+                     <div class="form-group"   >
+                      <label>State :</label>
+                  
+                        <div class="form-check" >
+                          <input  formControlName="state" class="form-check-input form-control" type="radio"  id="gridRadios1" value="NEW" >
+                          <label class="form-check-label" for="gridRadios1">
+                            New
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input  formControlName="state" class="form-check-input form-control" type="radio"  id="gridRadios2" value="OLD">
+                          <label class="form-check-label" for="gridRadios2">
+                            Old
+                          </label> </div>
+                          </div> 
+                          
+                        
+                         
+      
+                      
+                  
+                  
+                      <div class="mt-2">
+                        <button type="submit"    class="btn btn-success">Update</button>
+                     </div>  
+                
+                     
+                     
+                    </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

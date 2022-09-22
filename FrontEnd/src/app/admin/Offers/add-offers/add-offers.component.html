@@ -1,0 +1,64 @@
+ 
+<section class="border p-4 text-center mb-4 "   style="color: black;">
+  
+ 
+
+  <div  class="modal" tabindex="-1" style="position: static; display: block; height: auto" data-gtm-vis-first-on-screen-2340190_1302="6684" data-gtm-vis-total-visible-time-2340190_1302="100"
+       data-gtm-vis-has-fired-2340190_1302="1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+                              <div class="modal-header">
+                                 <h5 class="modal-title">Add an offer</h5>
+        
+                              </div>
+
+
+
+  <form [formGroup]="offer" (ngSubmit)="addOffer()" >
+         <div class="modal-body">   
+         
+               <label class="form-label" for="form1Example2">Product</label><br>
+               <select class="form-select" aria-label="Default select example" formControlName="product">
+                  <option  [ngValue]="null" [disabled]="true" >select your Product</option>
+                    <option  *ngFor="let cat of products " [value]="cat.id" >
+                      {{cat.productName}}
+                    </option>
+
+                  
+               </select>
+              
+             </div> <br> <br>
+                <div>
+          <label class="form-label" for="form1Example2">Starting price</label>
+          <input  formControlName="price" type="number" class="form-control">
+          <span *ngIf="!offer.get('price').valid && offer.get('price').touched" class="help-block">your price is invalid</span>
+                </div>
+  
+        <div class="modal-footer">
+          <a
+                  [routerLink]="['offer']"
+                  type="button"
+                  class="btn btn-danger"
+                  data-mdb-dismiss="modal"
+                  >
+            Close
+        </a>
+
+          <button type="submit" class="btn " style="background-color: #005555;">
+           
+           publish
+          </button>
+               </div>
+    </form>
+            </div>
+         
+          </div>
+         
+         </div>
+
+
+
+
+
+  

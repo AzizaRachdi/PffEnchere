@@ -1,0 +1,221 @@
+
+ <section [hidden]="deposit" class="border p-4 text-center mb-4 row " >
+    
+     <div class="col-3"></div>
+  
+      <div class="modal-dialog col-6">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Make a Deposit</h5>
+            <button type="button"class="btn-close"data-mdb-dismiss="modal"aria-label="Close" (click)="close1()"></button>
+          </div>
+          <div class="modal-body">
+     
+        <div>
+            <label class="form-label" for="form1Example2">Payment Ammount</label>
+            <input #putsold type="number" id="form1Example2" class="form-control" style="border-color: #005555" />
+        
+        </div>
+  
+          </div>
+          <button type="button" (click)="addsold(putsold.value)" class="btn btn-success " >Confirm</button>
+          <button (click)="close1()"type="button"class="btn btn-danger">Cancel</button>
+          </div>
+        </div>
+        <div class="col-3"></div>
+     
+   
+ </section>
+ 
+
+    <section [hidden]="withdraw" class="border p-4 text-center mb-4 " >
+    <div class="modal"tabindex="-1" style="position: static; display: block; height: auto"data-gtm-vis-first-on-screen-2340190_1302="6684" data-gtm-vis-total-visible-time-2340190_1302="100"data-gtm-vis-has-fired-2340190_1302="1" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Make a withdraw</h5>
+            <button type="button"class="btn-close"data-mdb-dismiss="modal"aria-label="Close" (click)="close2()"></button>
+          </div>
+          <div class="modal-body">
+     
+        <div>
+            <label class="form-label" for="form1Example2">withdrawed Ammount</label>
+            <input #takensold type="number" id="form1Example2" class="form-control" style="border-color: #005555" />
+        </div>
+      </div>
+      <button type="button" (click)="witdraw(takensold.value)" class="btn btn-success ">Confirm</button>
+          <button (click)="close2()"type="button"class="btn btn-danger "data-mdb-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+   
+  </section>
+   
+ 
+  
+  
+  
+  
+
+    <main [ngStyle]="{'opacity':opacity}" id="main" class="main"> 
+  
+      <div class="pagetitle">
+        <h1>Profile</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+            <li class="breadcrumb-item"><a routerLink="listprod">Products</a></li>
+            <li class="breadcrumb-item"><a routerLink="../../offers">Offers</a></li>
+          </ol>
+        </nav>
+      </div>
+  
+      <section class="section profile">
+        <div class="row">
+          <div class="col-xl-4">
+  
+            <div class="card" style="Border-color :#005555">
+              <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+  
+                <img src={{old.photo}}  style="width:20%" alt="Profile" class="rounded-circle">
+                <h2 style="color:#005555">{{old.first_name}} {{old.last_name}}</h2>
+                <h3>Client</h3>
+                <div class="social-links mt-3">
+              
+                  <i class="fa fa-facebook-square" aria-hidden="true" style="margin-right: 6px"></i>
+                  <i class="fa fa-linkedin-square" aria-hidden="true"  style="margin-right: 6px"></i>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
+          <div class="col-xl-8">
+  
+            <div class="card" style="Border-color :#005555">
+              <div class="card-body pt-3">
+ 
+                <ul class="nav nav-tabs nav-tabs-bordered">
+  
+                  <li class="nav-item">
+                   
+                     <button class="nav-link " (click)="changep()" data-bs-toggle="profile-overview" data-bs-target="#profile-overview">Overview</button> 
+                  </li>
+  
+                  <li class="nav-item">
+                    <button class="nav-link" routerLink="update" routerLinkActive="active" style="color :#005555" >Edit Profile</button>
+                  </li>
+  
+                  <li class="nav-item">
+                   
+                    <button class="nav-link" (click)="changes()" data-bs-toggle="profile-settings"  data-bs-target="#profile-settings">Settings</button> 
+                  </li>
+  
+                  <li class="nav-item">
+   
+                    <button class="nav-link" (click)="changepa()" data-bs-toggle="profile-change-password" data-bs-target="#profile-change-password">Change Password</button> 
+                  </li>
+  
+                </ul>
+                <div class="tab-content  pt-2">
+  
+                 
+                     <div [ngClass]="activeprofile()" class="tab-pane fade show  profile-overview" id="profile-overview"> 
+                    <h5 class="card-title">About</h5>
+                    <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
+  
+                    <h5 class="card-title">Profile Details</h5>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                      <div class="col-lg-9 col-md-8">{{old.first_name}} {{old.last_name}}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Company</div>
+                      <div class="col-lg-9 col-md-8">{{old.companie}}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Age</div>
+                      <div class="col-lg-9 col-md-8">{{old.age}}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Username</div>
+                      <div class="col-lg-9 col-md-8">{{old.username}}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Phone</div>
+                      <div class="col-lg-9 col-md-8">{{old.phone}}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Email</div>
+                      <div class="col-lg-9 col-md-8">{{old.email}}</div>
+                    </div>
+  
+                  </div>
+  
+                  
+  
+  
+               
+                  <div [ngClass]="activesetting()" class="tab-pane  fade pt-3" id="profile-settings"> 
+  
+                    
+                  
+                    <div class="border px-3">
+                      <span style="margin-right:3%"> Your Solde : </span ><span style="margin-right:1%">{{old.solde|number:'1.2-3'}}</span> <i class="fa fa-diamond" aria-hidden="true" style="--fa-beat-scale: 2.0;color:rgb(73, 73, 18)"></i> <button class="btn btn-success" style="margin-left: 10%;margin-right:8%;" 
+                      (click)="opendeposit()" >Deposit</button><button class="btn btn-info" (click)="openwithdraw()">Withdraws</button></div> 
+                      <br>
+                    <button type="button" class="btn btn-danger"  style="margin-left:30%" (click)="disactivateAccount(id)"  >Disactivate your Account</button>
+           
+  
+                  </div>
+  
+                 
+                     <div [ngClass]="activepassword()" class="tab-pane fade pt-3" id="profile-change-password"> 
+                    
+                      <form #pass="ngForm" (ngSubmit)="changepassword(pass.value)"> 
+  
+                      <div class="row mb-3">
+                        <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input ngModel  name="password" type="password" class="form-control" id="currentPassword">
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input ngModel name="newpassword" type="password" class="form-control" id="newPassword">
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input ngModel name="renewpassword" type="password" class="form-control" id="renewPassword">
+                        </div>
+                      </div>
+  
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Change Password</button>
+                      </div>
+                    </form>
+  
+                  </div>
+  
+                </div>
+  
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </section>
+  
+    </main>
+    <br>

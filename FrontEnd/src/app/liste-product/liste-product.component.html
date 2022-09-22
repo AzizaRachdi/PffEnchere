@@ -1,0 +1,86 @@
+<br><div class="container">
+    <button style="margin-right:15px" routerLink="../addproduct" class="btn btn-outline-success"><i class="fa fa-plus "  aria-hidden="true"></i> Product</button>
+    <button routerLink="../addoffer" class="btn btn-outline-success"><i class="fa fa-plus" aria-hidden="true"></i> Offer</button>
+    <br><br>
+    <div class="table-wrap">
+        <table class="table table-responsive table-borderless">
+            <thead>
+                <th>Number</th>
+                <th>image</th>
+                <th>Product Name</th>
+                <th>State</th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr  class="align-item-center" *ngFor="let c of ListProduct">
+                    <td>
+                        <p>{{c.id}}</p>
+                    </td>
+                    <td>
+                        <img style="width:50px ;height:50px" src={{c.image}} alt="">
+                    </td>
+                    <td>
+                        <div>
+                            <p class="m-0 fw-bold">{{c.productName}}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="fw-600">{{c.state}}</div>
+                    </td>
+                    <td>
+                        <button (click)="update(c.id,c.owner)" class="btn btn-warning" >
+                            <i class="fa fa-wrench" aria-hidden="true"></i> Update
+                        </button>
+                    </td>
+                    <td>
+                        <button (click)="delete(c)" class="btn btn-danger" >
+                            <i class="fa fa-times" aria-hidden="true"></i>  Disable
+                        </button>
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+<!-- 
+<div class="container">
+<div class="card shadow mb-4">
+<div class="card-body">
+<table class="table table-striped">
+<tr> <th>Id</th><th>Name</th><th>label</th><th>Price</th> <th>Image</th> <th>State</th>  </tr>
+
+
+<tbody *ngFor="let Product of products">
+<tr >
+<td>{{Product.idProduct}}</td>
+<td>{{Product.nameProduct}}</td>
+<td>{{Product.labelProduct}}</td>
+<td>{{Product.priceProduct}}</td>
+<td>{{Product.imageProduct}}</td>
+<td>{{Product.stateProduct}}</td>
+
+
+<td><a class="btn btn-success" ><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+<td><a class="btn btn btn-success"  style=" color: beige;"   (click)=" DeleteProduct(Product)" ><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+<td><a class="btn " style="background-color:  #005555; color: beige;" ><i class="fa fa-share" aria-hidden="true"></i></a></td>
+
+
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div> -->
+
+
+
+
+
+

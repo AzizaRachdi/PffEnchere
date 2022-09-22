@@ -1,0 +1,89 @@
+<div class="container-fluid ps-md-0">
+  <div class="row g-0">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Add Product</h3>
+
+              
+              
+                 <form [formGroup]="product" (ngSubmit)="addProduct()">
+                
+                 
+                      <div class="form-group">
+                        <label > Name Product</label>
+                        <input   type="text" formControlName="productName" class="form-control">
+                       </div>
+
+                       <label >Category :</label> 
+                       <br>
+                      <select  class ="form-group" id="idCat" formControlName="category">
+                     
+                        <option [ngValue]="null" [disabled]="true" >select Category</option>
+                       <option  *ngFor="let cat of categories " [value]="cat.id">
+                         {{cat.categoryName}}
+                       </option> 
+                      </select>
+
+                       <div class="form-group">
+                        <label >label  Product</label>
+                        <input  type="text" formControlName="description" class="form-control" placeholder="description">
+                      </div>
+                     
+                      <div class="form-group">
+                        <label for="name" class="col-sm-3 control-label" >Image(jpg/png):</label> 
+                      
+                         <input type="file" (change)="getFile($event)" id="name" class="form-control" formControlName="image"> 
+                    </div>
+
+
+
+
+              
+                   <div class="form-group"   >
+                    <label>State :</label>
+                      <div class="form-check" >
+                        <input  formControlName="state" class="form-check-input" type="radio"  id="gridRadios1" value="NEW" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                          New
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input   formControlName="state" class="form-check-input" type="radio"  id="gridRadios2" value="OLD">
+                        <label class="form-check-label" for="gridRadios2">
+                          Old
+                        </label> </div>
+                        </div> 
+                        
+                        
+       
+   
+
+
+
+
+
+                       
+                 
+                    
+                
+                
+                    <div class="mt-2">
+                      <button type="submit"    class="btn btn-success">Ajouter</button>
+                   </div>  
+              
+                   
+                   
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+

@@ -1,0 +1,112 @@
+<div *ngIf="product" class="container mt-5 mb-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="images p-3">
+                            <div class="text-center p-1"> <img id="main-image" src={{product.image}} width="250" /> </div>
+                        
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product p-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center"  > <i class="fa fa-long-arrow-left"></i> <a class="ml-1" (click)="back()">Back</a> </div> 
+                            </div>
+                            <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand">{{product.productName}}</span>
+                                <h5 class="text-uppercase">Price</h5>
+                                <div class="price d-flex flex-row align-items-center"> <span class="act-price">{{product.description}}</span>
+                        
+                                </div>
+                            </div>
+                            <p class="about">Shop from a wide range of t-shirt from orianz. Pefect for your everyday use, you could pair it with a stylish pair of jeans or trousers complete the look.</p>
+                            <div class="sizes mt-5">
+                                 <p><span>Proposed by : </span> {{owner.username}}</p>
+                                 <h3>Contact</h3>
+                             <!--icon phone-->    <p> {{owner.phone}}</p>
+                             <!--icon email-->    <p> {{owner.email}}</p>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+
+    <div class="row  d-flex justify-content-center">
+
+        <div class="col-md-4">
+
+            <div class="headings d-flex justify-content-between align-items-center mb-5">
+                <h5>Comments ({{tab.length}})</h5>
+
+                <div class="buttons">
+
+                    <span class="badge bg-white d-flex flex-row align-items-center">
+                        
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" (change)="showComments()" type="checkbox" id="flexSwitchCheckChecked" checked >
+                          
+                        </div>
+                    </span>
+                    
+                </div>
+                
+            </div>
+
+
+
+            <div [hidden]="showcomments" class="card " *ngFor="let c of tab">
+
+                <div class="d-flex  align-items-center">
+
+              <div class="user d-flex flex-row align-items-center">
+
+                <img src={{c.user.image}} width="30" class="user-img rounded-circle mr-2">
+                <span><small class="font-weight-bold text-primary fs-6">{{c.user.username}} : </small> <small class="font-weight-bold">{{c.comment.comment}}</small></span>
+                  
+              </div>
+
+
+              <small style="margin-left: 10px;font-size:smaller">;{{c.comment.date|date}}</small>
+
+              </div>
+
+
+              <div class="action d-flex  mt-2 align-items-center">
+
+                <div [hidden]="!c.user.is_owner" class="reply px-4">
+                    <a class="btn-info" (click)="showEdit()" type="button">Edit</a>
+                    <a type="button" class="btn-alert" (click)="removeComment(c.comment.id)" style="margin-left: 10px;">Remove</a>
+                    
+                    <div [hidden]="editState">
+                        <input type="text" #newcomment >
+                        <button (click)="editComment(c.comment,newcomment.value)">Confirm</button>
+                    </div>
+                    
+                   
+                </div>
+
+                 
+              </div>  
+            </div>
+        </div>  
+    </div>
+</div>
+<br>
+
+<div class="container height-50 d-flex justify-content-center align-items-center">
+  <div class="card p-7"> 
+     <h5>Add comments</h5> <textarea id="textarea" #comment class="form-control">
+          </textarea> 
+          <div class="mt-3 d-flex justify-content-between align-items-center">
+              <span id="count"></span>
+               <button class="btn btn-sm " (click)="addComment(comment.value)"  style ="background-color:  #005555 ; color: aliceblue;">Submit</button> </div> </div>
+</div>
+
+

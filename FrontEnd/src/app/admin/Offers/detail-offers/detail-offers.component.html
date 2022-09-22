@@ -1,0 +1,68 @@
+
+<section class="vh-100" >
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12">
+          <div class="card card-stepper text-black" style="border-radius: 16px;">
+  
+            <div class="card-body p-5"  *ngIf="offer">
+  
+              
+  
+             
+  
+              <div class="d-flex justify-content-between">
+                <div class="d-lg-flex align-items-center">
+                  <i class="fas fa-clipboard-list fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+                  <div>
+                    <p class="fw-bold mb-1">id : {{offer.id}}</p>
+                   
+                  </div>
+                </div>
+                <div class="d-lg-flex align-items-center">
+                  <i class="fas fa-box-open fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+                  <div>
+                    <p class="fw-bold mb-1">Product id : {{offer.product}}</p>
+                  
+                  </div>
+                </div>
+                <div class="d-lg-flex align-items-center">
+                  <i class="fas fa-shipping-fast fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+                  <div>
+                    <p class="fw-bold mb-1">Date of Creation : {{offer.startDate}}</p>
+                   
+                  </div>
+                </div>
+                <div class="d-lg-flex align-items-center">
+                  <i class="fas fa-shipping-fast fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+                  <div>
+                    <p class="fw-bold mb-1">Expire Date : {{offer.endDate}}</p>
+                 
+                  </div>
+                </div>
+                <div class="d-lg-flex align-items-center">
+                  <i class="fas fa-shipping-fast fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+                  <div>
+                    <p class="fw-bold mb-1">Price : {{offer.price}}</p>
+                 
+                  </div>
+                </div>
+                <div class="d-lg-flex align-items-center">
+                  <i class="fas fa-shipping-fast fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+                  <div>
+                    <p class="fw-bold mb-1">Active : {{offer.etat}}</p>
+                 
+                  </div>
+                </div>
+             
+             
+              </div>
+  
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+

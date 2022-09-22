@@ -1,0 +1,140 @@
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
+    <img src="assets/images/logo.png" width="80px"></a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" da.ta-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="d-flex align-items-center justify-content-center" style="color:white">
+   
+    <input class="form-control me-2 " placeholder="Search ">
+    <span class=" search me-4 "><i class="fa fa-search"></i></span>
+   
+   
+</div>
+
+  <div class="dropdown" style="margin-left:15% ;margin-right:20px;">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fa fa-bell" aria-hidden="true" style="color:aliceblue"></i>
+     <span class="badge rounded-pill badge-notification bg-danger">{{unreaded}}</span></a>
+     <ul class="dropdown-menu">
+       <li *ngFor="let c of notifications" [ngClass]="{old:c.is_Readed,new:!c.is_Readed}"><a class="dropdown-item" (click)="read_it(c.id)" > {{c.respname}}  {{c.subject}}   {{c.date|date}}</a></li>
+       
+     </ul>
+   </div>
+
+    <div class="nav-item text-nowrap">
+      <div class="dropdown text-end" style="right :120px;">
+        <a href="#" class ="d-block link-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+        </a>
+        <ul class="dropdown-menu text-small" >
+        
+          <li><a class="dropdown-item" href="#" style=" background-color :dark ;color: #005555;">Settings</a></li>
+          
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item"  style="color: #005555;"  (click)="logout()" >logout</a></li>
+        </ul>
+      </div>
+    
+    </div>
+ 
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3 sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item" >
+            <a class="nav-link active" aria-current="page" routerLinkActive="active"   routerLink="main"  style="color: #005555;">
+              <span data-feather="home" class="align-text-bottom"></span>
+              <i class="fa fa-tachometer" aria-hidden="true">  </i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="user" style="color: #005555;">
+              <span data-feather="file" class="align-text-bottom"></span>
+              <i class="fa fa-users" aria-hidden="true"></i> Manage Users
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="product" style="color: #005555;">
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+              <i class="fa fa-th-large" aria-hidden="true"> </i> Manage  Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="category" style="color: #005555;">
+              <span data-feather="users" class="align-text-bottom"></span>
+              <i class="fa fa-align-justify" aria-hidden="true"></i>Manage Categories
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="comment" style="color: #005555;">
+              <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+              <i class="fa fa-comments" aria-hidden="true"></i>Manage Comments
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="offer" style="color: #005555;">
+              <span data-feather="layers" class="align-text-bottom"></span>
+              <i class="fa fa-gavel" aria-hidden="true"> </i>Manage  Offers
+            </a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="auction" style="color: #005555;">
+              <span data-feather="layers" class="align-text-bottom"></span>
+              <i class="fa fa-exchange" aria-hidden="true"></i>Manage Auction
+            </a>
+          </li>
+         
+        </ul>
+
+       
+      
+      
+        
+        
+      </div>
+    </nav>
+ 
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group me-2">
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet> 
+
+
+          </div>
+         
+        
+        </div>
+      </div>
+
+      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+      
+      
+    </main>
+  </div>
+</div>
+
+
+
+
+
+
+
+   
+
+    
+ 
+  <!-- <a class="nav-link px-3" type="button" (click)="logout()">Logout</a> -->

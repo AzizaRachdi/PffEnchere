@@ -1,0 +1,119 @@
+<div [hidden]="admin"> 
+ 
+  <header [hidden]="isUserAuthenticated"> 
+    <nav class="navbar navbar-expand-lg" style="background-color:  #005555 ;">
+      <div class="container-fluid">
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        style=" color: white;" >
+      <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+      <p>
+
+          
+         
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+              <a class="navbar-brand mt-2 mt-lg-0" routerLink="">
+                <img
+                  src="assets\images\logo.png"  style ="width:70px"/>
+              </a>
+              <ul class="navbar-nav   mb-lg-0" style="margin-right:0px">
+                <li class="nav-item" style="color:white">
+                  <i class="fa fa-home" aria-hidden="true" routerLink=""  ></i> 
+                </li>
+              </ul>
+                  <div class="col-md-4 d-flex  align-items-center   mb-3 mb-md-0"  style="color:white;padding-left:40%" > 
+                    <input type="text" class="bg-white h-14 w-full px-12 rounded-lg focus:outline-none hover:cursor-pointer me-2"  #searchItem >
+                   <a style="color:white" (click)="search(searchItem.value)"   class=" absolute search me-4 "> <i class="absolute fa fa-search text-white-400 top-5 left-4"></i></a>
+                  </div>
+             </div>
+
+          
+           
+            
+            <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"> 
+            <div class="text-end " style="color: white"  >
+             
+              <button type="button" class="btn me-2" style="color: white"  (click)="gotologin()" ><i class="fa fa-lock" aria-hidden="true">Login</i></button>|
+              <button type="button" class="btn me-2" style=" color:white" (click)="gotoregister()"   > <i class="fa fa-address-card-o" aria-hidden="true">Sign-up</i> </button>
+               
+              </div>
+        
+          </ul> 
+        
+        </div>
+    
+    </nav>
+  
+</header>
+
+<!-- ---------------------------------------------------------------------Navbar 2------------------- -->
+
+<header  [hidden]="!isUserAuthenticated" >
+
+<div class="p-3 text-center  border-bottom" style="background-color:#005555; color :white">
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
+      <a type="button" routerLink=""><img  
+      src="assets\images\logo.png"  style ="width:70px" /></a>
+
+    </div>
+  
+
+    <div class="col-md-4 d-flex  align-items-center   mb-3 mb-md-0"  style="color:white" >
+             
+      <input type="text" class="bg-white h-14 w-full px-12 rounded-lg focus:outline-none hover:cursor-pointer me-2"  #searchItem2 >
+      <a style="color:white" (click)="search(searchItem2.value)"   class=" absolute search me-4 "> <i class="absolute fa fa-search text-white-400 top-5 left-4"></i></a>
+      
+  </div>
+  
+  
+
+    <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="d-flex">
+      
+        <a class="text-reset me-3" >
+          
+          <div class="dropdown" >
+    
+            <button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown">
+             
+              <img src="{{profile_picture}}" alt="Profile" style ="width:40px;height:45pxr " class="rounded-circle">
+            </button>
+    
+          
+        
+            <ul  class="dropdown-menu" style="background-color:#005555; color :white ;text-align: center;">
+               <li><p>Username :{{username}}</p>
+            <p>Solde : {{solde}} <i class="fa fa-diamond" aria-hidden="true" style="--fa-beat-scale: 2.0;color:yellow"> </i> </p>
+              </li>
+              <li ><a class="dropdown-item" (click)="gotoprofile(user.id)" style="background-color:#005555; color :white ; margin-right: 2px;"><i class="fa fa-tachometer" aria-hidden="true"></i> Profile</a></li>
+            
+            </ul>
+        
+            <button  type="button"  class="btn btn-light  me-2"  (click)="onLogout()" style="color:  #005555;margin:4px" ><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+         
+          </div>
+         
+        </a>
+
+      
+      </div>
+    </div>
+ 
+  </div>
+</div>
+</div>
+
+
+</header> 
+</div>

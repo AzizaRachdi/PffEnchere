@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    body{
+        background-color: #eee;
+    }
+    img{
+        height: 150px;
+        width: 150px;
+        border: 8px solid#005555;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%,-50%);
+    }
+    
+    .card{
+        position:relative;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        
+    }
+    .name{
+        font-size: 15px;
+        margin-bottom: 6px;
+        padding-top: 90px;
+    }
+    .job{
+        color:  #005555;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    .container-category.card .icons .icon {
+        font-size: 14px;
+        width: 30px;
+        height: 30px;
+        color: white;
+        background-color:  #ffffff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .dis{
+        color: #7e7c7c;
+        line-height: 2;
+    }
+    
+    .container-category  .icons .icon {
+        background-color: #ffffff;
+        color: #005555;
+    }
+    .container-category .text-center{
+        background-color:#ffffff;
+        color: white;
+    }
+    .container-category  .job,.container  .name{
+        color: rgb(7, 7, 7);background-color: #ffffff;
+    }
+    .container-category  .dis{
+        color: #c4c4c4;
+    }
+    .container-category .icons .icon:hover{
+        background-color: #005555;
+    }
+    .mt-80{
+        margin-top: 80px;
+        margin-bottom: 40px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }

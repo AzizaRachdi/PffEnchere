@@ -1,0 +1,133 @@
+
+<section class="h-200 h-custom " style ="background-image :url(assets/images/daniel.jpg) ;background-size: cover ;" >
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-110">
+        <div class="col-md-8 col-md-6">
+          <div class="card rounded-3">
+           
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Information</h3>
+             
+              <form class="px-md-2" [formGroup]="account" (ngSubmit)="onSubmit()"  >
+                <div class="row my-4">
+              
+                <div class="col-md-6"  style="padding-bottom :2%">
+                  <input  formControlName="first_name" type="text" id="form3Example1cg" class="form-control form-control-md" style="border-color: #005555;" placeholder="FirstName"/>
+                   <span *ngIf="!account.get('first_name').valid && account.get('first_name').touched" class="help-block">your first name is invalid</span> 
+                </div>
+             
+  
+              
+                <div class="col-md-6 "style="padding-bottom :2%">
+                  <input formControlName="last_name" type="text" id="form3Example1cg" class="form-control form-control-md" style="border-color: #005555;" placeholder="LastName" />
+                <span *ngIf="!account.get('last_name').valid && account.get('last_name').touched" class="help-block">your last name is invalid</span> 
+            
+                </div>
+              
+                
+              
+                <div class="col-md-6"  style="padding-bottom :2%">
+                  <select formControlName="genre" id="status" class="form-control"  >
+                  
+                   <option [ngValue]="null" [disabled]="true"  >select your gender</option>
+                    <option *ngFor="let st of typeStatus" [value]="st"> {{ st }} </option> 
+                  </select>
+                </div>
+              
+  
+  
+              
+                <div class="col-md-6"  style="padding-bottom :2%">
+                  <input formControlName="age" type="number" id="form3Example1cg" class="form-control form-control-md" style="border-color: #005555;" placeholder="Age" />
+                  <span *ngIf="!account.get('age').valid && account.get('age').touched" class="help-block">your age is invalid</span> 
+                 
+                 </div>
+               
+  
+               
+                 <div class="col-md-6"  style="padding-bottom :2%">
+                   <input formControlName="phone" type="number" id="form3Example1cg" class="form-control form-control-md" style="border-color: #005555;" placeholder="Phone number"/>
+                   <span *ngIf="!account.get('phone').valid && account.get('phone').touched" class="help-block">your phone is invalid</span>   
+                  </div>
+                
+  
+                
+                  <div class="col-md-6"  style="padding-bottom :2%">
+                    <input formControlName="companie"  type="text" id="form3Example1cg" class="form-control form-control-md" style="border-color: #005555;" placeholder="company name"/>
+                   
+                  <span *ngIf="!account.get('companie').valid && account.get('companie').touched" class="help-block">your company is invalid</span> 
+                  </div>
+                
+  
+                
+                  <div class="col-md-6" style="padding-bottom :2%" >
+                  
+                     <input type="file" id="form3Example1cg" (change)="getFile($event)" class="form-control form-control-md" formControlName="photo" style="border-color: #005555;" placeholder="Your Picture" >
+                    <span *ngIf="!account.get('photo').valid && account.get('photo').touched" class="help-block">your photo is invalid</span> 
+                  </div> 
+                
+  
+  
+                
+                  <div class="col-md-6" style="padding-bottom :2%">
+                    <input formControlName="email" type="email" id="form3Example3cg" class="form-control form-control-md"style="border-color: #005555;" placeholder=" Email" />
+                
+                  <span *ngIf="!account.get('email').valid && account.get('email').touched" class="help-block">your email is invalid</span> 
+                  </div>
+                
+                  
+                
+                  <div class="col-md-6"  style="padding-bottom :2%">
+                    <input formControlName="username" type="text" id="form3Example3cg" class="form-control form-control-md" style="border-color: #005555;" placeholder="Login" />
+                  
+                    <span *ngIf="!account.get('username').valid && account.get('username').touched" class="help-block">your username is invalid</span> 
+                  </div>
+                
+  
+  
+                
+                  <div class="col-md-6"  style="padding-bottom :2%">
+                    <input formControlName="password" type="password" id="form3Example4cg" class="form-control form-control-md" style="border-color: #005555;" placeholder="Password" />
+             
+                  <span *ngIf="!account.get('password').valid && account.get('password').touched" class="help-block">your password is invalid</span>
+                  </div>
+                
+  
+                  <div class="col-md-6"  style="padding-bottom :2%">
+                    <input #confirmPassword type="password" id="form3Example4cdg" class="form-control form-control-md" style="border-color: #005555;" placeholder="Repeat your password" />
+            
+                     <span *ngIf="!is_confirm" class="help-block">please put correct password</span> 
+                  </div>
+                
+  
+                  <div class="form-check d-flex justify-content-center mb-3">
+                  
+                    <input class="form-check-input me-2" style="border-color: #005555; "  type="checkbox" (change)="toggleEditable($event)" id="form2Example3cg" /> 
+                    <label class="form-check-label" for="form2Example3g">
+                      I agree all statements in <a href="#!" class="text-body" ><u>Terms of service</u></a>
+                    </label>
+                  </div>
+  
+                  <div class="d-flex justify-content-center">
+                   
+
+                       <button type="submit" (click)="setconf(confirmPassword.value)"
+                    
+                      class="btn btn-block btn-md gradient-custom-3 text-body" style>Register</button>
+                  </div>
+  
+                  <p class="text-center text-muted mt-3 mb-0">Have already an account? <a href="#!"
+                      class="fw-bold text-body"><u>Login here</u></a></p>
+                </div>
+                
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+            
+  
+  

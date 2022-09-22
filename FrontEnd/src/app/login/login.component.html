@@ -1,0 +1,67 @@
+
+
+   
+    <div id="intro" class="bg-image shadow-2-strong">
+        <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-xl-5 col-md-8">
+               
+                     <form #user="ngForm" (ngSubmit)="login(user.value)" class="bg-white  rounded-5 shadow-5-strong p-5"> 
+               
+                        <div class="form-outline mb-4">
+                    
+                             <input #username="ngModel" ngModel name="username" required type="text" id="form1Example1" class="form-control" style="border-color: #005555"/>
+                             <label class="form-label" for="form1Example1">Username</label><br>
+                  
+                             <span *ngIf="username.invalid && username.touched">username not valid</span> 
+                       </div>
+  
+              
+                      <div class="form-outline mb-4">
+
+                             <input #password="ngModel" ngModel name="password" required type="password" id="form1Example2" class="form-control" style="border-color: #005555" /> 
+                             <label class="form-label" for="form1Example2">Password</label><br>
+                  
+                             <span *ngIf="password.invalid && password.touched">password not valid</span>
+                      </div>
+  
+   
+                      <div class="row mb-4">
+                        <div class="col d-flex justify-content-center">
+                   
+                         <div class="form-check">
+                        
+                          <input class="form-check-input" type="checkbox" value="" id="form1Example3"  style="border-color: #005555;color:#005555;" (change)="remember()" />
+                           <label class="form-check-label" for="form1Example3">
+                          Remember me
+                             </label>
+                        
+                        </div>
+                      </div>
+  
+                       <div class="col text-center">
+  
+                       <a (click)="regain_password()" style="color:#005555;">Forgot password?</a><br> 
+                      
+                       </div>
+                    
+                     
+                      
+                    
+                  </div> 
+                  
+  
+               
+                  <button type="submit" class="btn " style="background-color:#005555;">Sign in</button>
+                  <a routerLink="../register" style="color:#005555;font-size:75%;padding-left:50%">Create new account ? </a>
+                
+                </form></div>
+           
+            </div></div></div>     
+          </div>
+       
+          
+   
+     
+  

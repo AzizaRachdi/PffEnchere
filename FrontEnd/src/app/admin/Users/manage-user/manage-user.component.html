@@ -1,0 +1,39 @@
+<main id="main" class="main"><div class="container mt-5 px-2">
+    
+    <div class="mb-2 d-flex justify-content-between align-items-center">
+        <button routerLink="adduser" class="btn btn-outline-success"><i class="fa fa-plus" aria-hidden="true"></i> User</button>
+        <div class="d-flex align-items-center justify-content-center">
+            <span class=" search me-2 "><i class="fa fa-search"></i></span>
+            <input class="form-control" placeholder="Search by order#, name...">
+           
+        </div>
+        
+        <div class="px-2">
+            
+            <span>Filters <i class="fa fa-angle-down"></i></span>
+            <i class="fa fa-ellipsis-h ms-3"></i>
+        </div>
+  
+        
+    </div>
+    
+   
+  
+  
+    
+  
+
+   
+    <app-user-list [users]="users" class=" table-responsive"></app-user-list> 
+  
+  </div> 
+
+  </main>
+
+
+
+  
+
+
+ 
+

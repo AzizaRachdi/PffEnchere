@@ -1,0 +1,31 @@
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class=" border-right">
+        <div class="d-flex flex-column align-items-center text-center p-0 py-5"><img class="rounded-circle " style="position: static;" width="150px" src={{olduser.photo}}></div>
+    </div>
+    <div class="row">
+        <div class=" border-right">
+            <form [formGroup]="updateuser" (ngSubmit)="update()" >
+            <div class="p-1 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">First Name</label><input formControlName="first_name" type="text" class="form-control" placeholder="..." value=""></div>
+                    <div class="col-md-6"><label class="labels">Last Name</label><input type="text" formControlName="last_name" class="form-control" value="" placeholder="..."></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Email</label><input type="text" formControlName="email" class="form-control" placeholder="..." value=""></div>
+                    <div class="col-md-12"><label class="labels">Username</label><input type="text" formControlName="username" class="form-control" placeholder="..." value=""></div>
+                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" formControlName="phone" class="form-control" placeholder="..." value=""></div>
+                    <div class="col-md-12"><label class="labels">Companie</label><input type="text" formControlName="company" class="form-control" placeholder="..." value=""></div>
+                    
+                </div>
+               
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+            </div>
+        </form>
+        </div>
+       
+    </div>
+</div>
+

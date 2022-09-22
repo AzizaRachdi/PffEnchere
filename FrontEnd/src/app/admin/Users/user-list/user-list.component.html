@@ -1,0 +1,126 @@
+<!-- <table class="table table-responsive table-borderless">
+      
+    <thead>
+      <tr class="bg-light">
+        
+        <th scope="col" width="5%">#</th>
+        <th scope="col" width="20%">idUser</th>
+        <th scope="col" width="20%">Firstname</th>
+        <th scope="col" width="10%">Lastname</th>
+        <th scope="col" width="20%">Username</th>
+        <th scope="col" width="20%">Email</th>
+        <th scope="col" width="20%">Active</th>
+        <th scope="col" width="20%"></th>
+        <th scope="col" width="20%"></th>
+        <th scope="col" width="20%"></th>
+        
+        
+
+       
+      </tr>
+    </thead>
+<tbody>
+ 
+  
+
+  
+  
+  <tr *ngFor="let c of users">
+    
+    <td></td>
+    <td><a type="button" (click)="show(c.id)">{{c.id}}</a></td>
+    <td> {{c.first_name}}</td>
+    <td> {{c.last_name}}</td>
+    <td>{{c.username}}</td>
+    <td>{{c.email}}</td>
+    <td>{{c.active}}</td>
+    <td> <span> <button type="button" class="btn btn-warning" style="margin: right 6px;">Update</button></span></td>
+    <td> <span> <button type="button" class="btn btn-success" (click)="activate(c)"  style="margin: right 6px;">Activate</button></span></td>
+    <td> <span><button type="button" class="btn btn-danger" (click)="disable(c)" style="margin: right 6px;">Disable</button></span></td>
+      
+  </tr>
+     
+  
+  
+  
+  
+
+</tbody>
+</table> -->
+
+<!-- 
+------------------------------------------------------- -->
+
+
+
+
+
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <h1    style="color:#005555">Dashboard</h1> <br>
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                
+                            <thead>
+                                <tr>
+                                  
+                                <th>idUser</th>
+                                <th>Firstname</th>
+                                <th>Lastname </th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                
+                                <th>Active</th>
+                                <th></th>
+                                <th> </th>
+                              
+  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let c of users">
+                                    <td>
+                                       
+                                      <a type="button" (click)="show(c.id)">{{c.id}}</a>
+                                       
+                                    </td>
+                                    <td>{{c.first_name}}</td>
+                                    <td>{{c.last_name}}</td>
+                                    <td>{{c.username}}</td>
+                                    <td>{{c.email}}</td>
+                                 
+                                    <td>{{c.active}}</td>
+                                    <td></td>
+                                    <td></td>
+                                 
+                           
+                                   
+                                 
+                                       
+                                    <div style="width: 20%;">
+                                    <td> <button type="button" class="btn btn-success"  (click)="activate(c)"  style="margin: right 1px;" >Activate<i class="fa fa-check" aria-hidden="true"></i></button></td>
+                                        <td >  <button type="button" class="btn btn-danger"  (click)="disable(c)" style="margin: right 1px;">Disactivate<i class="fa fa-times" aria-hidden="true"></i></button> </td>
+                                    </div>
+                                </tr>
+                                
+                                  
+                                
+                                 
+                                    
+                                       
+                                    
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <app-user-detail [id]="chosenuser"  ></app-user-detail> 
+  
